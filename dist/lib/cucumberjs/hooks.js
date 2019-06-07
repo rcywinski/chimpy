@@ -111,8 +111,7 @@ module.exports = function hooks() {
 
     log.debug('[chimp][hooks] Promise:', JSON.parse(JSON.stringify(promise)));
     log.debug('[chimp][hooks] Forcibly exiting Cucumber');
-    process.send(JSON.stringify(reason));
-    exit(2);
+    process.send(JSON.stringify(reason)); // exit(2);
   });
   process.on('SIGINT', function () {
     log.debug('[chimp][hooks] Received SIGINT process event, ending browser session');
